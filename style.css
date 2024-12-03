@@ -1,0 +1,202 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+:root {
+  --bg-dark: #1f4529;
+  --bg-dark-sc: #47663b;
+  --bg-dark-sc-alpha: #47663b98;
+  --bg-lg: #e8ecd7;
+  --bg-lg-sc: #eed3b1;
+  --transsi: all 0.3s ease-in-out;
+}
+
+.head {
+  min-width: 100vw;
+  height: 55vh;
+  background-color: var(--bg-dark);
+  color: var(--bg-lg-sc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.head form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30rem;
+  margin-top: -1rem;
+}
+
+.head form input {
+  height: 2.8rem;
+  text-align: center;
+  border-radius: 12px;
+  outline: none;
+  border: 0.5px solid var(--bg-lg);
+  background-color: var(--bg-lg);
+  color: var(--bg-dark);
+  font-size: 1.2rem;
+}
+.head form .btn-write {
+  height: 2.8rem;
+  border-radius: 12px;
+  background-color: var(--bg-lg-sc);
+  font-size: 1.2rem;
+  color: var(--bg-dark-sc);
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+}
+.head form .btn-write:hover {
+  background-color: var(--bg-lg);
+}
+
+.body {
+  background-color: var(--bg-lg);
+  margin-top: -1.6rem;
+  height: 100vh;
+}
+
+.body .list ul {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.body .list ul li {
+  list-style: none;
+  background-color: var(--bg-dark);
+  margin-top: 1.2rem;
+  color: var(--bg-lg);
+  display: flex;
+  gap: 0.5rem;
+  padding: 2px;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+}
+
+.body .list ul li :first-child {
+  height: fit-content;
+  padding: 3px;
+  border-top-left-radius: 6px;
+  background-color: var(--bg-lg-sc);
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--bg-dark);
+}
+
+.body .list ul li :last-child {
+  padding-right: 2px;
+}
+
+.body .todos {
+  margin-top: 4rem;
+}
+
+.body .todos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.todos li {
+  width: 30rem;
+  background-color: var(--bg-dark);
+  list-style: none;
+  height: 3.2rem;
+  display: flex;
+  color: var(--bg-lg);
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+li div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.todos li.complete {
+  text-decoration: line-through;
+  background-color: var(--bg-dark-sc);
+  color: var(--bg-lg-sc);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--bg-lg);
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.5px solid var(--bg-lg);
+  border-radius: 100%;
+  margin-left: 0.5rem;
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.6208 0.258764C10.6952 0.176836 10.7841 0.111751 10.8821 0.0673184C10.9802 0.0228862 11.0855 0 11.1919 0C11.2982 0 11.4035 0.0228862 11.5016 0.0673184C11.5996 0.111751 11.6885 0.176836 11.763 0.258764C12.075 0.598788 12.0793 1.14824 11.7739 1.49414L5.32319 9.71825C5.24995 9.80499 5.16108 9.8747 5.062 9.92312C4.96292 9.97154 4.85572 9.99765 4.74697 9.99985C4.63821 10.0021 4.53018 9.9803 4.42949 9.93593C4.3288 9.89156 4.23756 9.82549 4.16135 9.74178L0.236178 5.45207C0.084797 5.28557 0 5.06168 0 4.8285C0 4.59531 0.084797 4.37142 0.236178 4.20492C0.31063 4.123 0.399489 4.05791 0.497552 4.01348C0.595616 3.96905 0.700914 3.94616 0.80728 3.94616C0.913647 3.94616 1.01894 3.96905 1.11701 4.01348C1.21507 4.05791 1.30393 4.123 1.37838 4.20492L4.70791 7.844L10.5989 0.284648L10.6208 0.258764Z' fill='black'/%3E%3C/svg%3E%0A");
+  transform: scale(0);
+  transition: var(--transsi);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--bg-lg);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+li button {
+  display: grid;
+  place-content: center;
+  background-color: transparent;
+  border: none;
+}
+
+li button svg path {
+  transition: var(--transsi);
+}
+
+li button:hover svg path {
+  stroke: var(--bg-dark-sc);
+}
+
+li button:active svg {
+  transform: scale(0.8);
+}
+
+li button svg {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+li div span {
+  padding: 2px;
+  border-radius: 4px;
+}
+
+li div span[contenteditable]:hover {
+  background-color: var(--bg-dark-sc-alpha);
+  transition: var(--transsi);
+}
+
+li div span[contenteditable]:focus {
+  outline: none;
+}

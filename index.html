@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolis.app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="head">
+      <h1>today</h1>
+      <form action="" id="form">
+        <input type="text" autocomplete="off" class="text" placeholder="apayang kamu lakukan hari ini" />
+        <button class="btn-write">catat</button>
+      </form>
+    </section>
+    <section class="body">
+      <div class="list">
+        <ul>
+          <li>
+            <span>menunggu</span>
+            <span class="wait">0</span>
+          </li>
+          <li>
+            <span>selesai</span>
+            <span class="finish">0</span>
+          </li>
+          <li>
+            <span>total</span>
+            <span class="total">0</span>
+          </li>
+        </ul>
+      </div>
+      <div class="todos">
+        <ul class="todo-list"></ul>
+      </div>
+    </section>
+    <script src="app.js"></script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
